@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        margin: 5px;
+    }
+</style>
+<body>
+    <input id="heightJond" type="number" placeholder="Nhập chiều cao của Jond" step="0.01">
+    <input id="weightJond"  type="number" placeholder="Nhập cân nặng của Jond" step="0.1"><br>
+    <input id="heightMark" type="number" placeholder="Nhập chiều cao của Mark" step="0.01">
+    <input id="weightMark"  type="number" placeholder="Nhập cân nặng của Mark" step="0.1"><br>
+    <button onclick="calculateBMI()">Tính BMI</button>
+    <h2>Chỉ số BMI của Jond: <span id="JondResult">-</span></h2><br>
+    <h2>Chỉ số BMI của Mark: <span id="MarkResult">-</span></h2><br>
+    <h1 style="color: red;">KẾT QUẢ SO SÁNH </h1>
+    <h3 id="comparisonText"></h3>
+    <script src="main.js"></script>
+</body>
+</html>
