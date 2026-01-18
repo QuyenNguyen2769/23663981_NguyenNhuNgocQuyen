@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color: green;">Điểm thi đấu của đội Dolphins: </h1><br>
+    <label>Trận 1</label><input type="number" id="tran1_Dol" step="0.01">
+    <label>Trận 2</label><input type="number" id="tran2_Dol" step="0.01">
+    <label>Trận 3</label><input type="number" id="tran3_Dol" step="0.01">
+    <h1 style="color: pink;">Điểm thi đấu của đội Koalas</h1>
+    <label>Trận 1</label><input type="number" id="tran1_Koa" step="0.01">
+    <label>Trận 2</label><input type="number" id="tran2_Koa" step="0.01">
+    <label>Trận 3</label><input type="number" id="tran3_Koa" step="0.01"> <br>
+    <button style="margin-top: 30px;" onclick="calAvg()">Tính</button>
+    <h1>Kết quả trận đấu: </h1>
+    <h3>Điểm trung bình của đội Dolphin: <span id="avg_Dol">-</span></h3>
+    <h3>Điêm trung bình của đội Koalas: <span id="avg_Koa">-</span></h3>
+    <h1><i id="doiThang"></i></h1>
+    <script src="main.js"></script>
+</body>
+</html>
