@@ -13,8 +13,10 @@ import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
 import Orders from "./components/Orders";
 import Setting from "./components/Setting";
-
 import Checkout from "./components/Checkout";
+import Login from "./components/Login";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { useAuth } from "./AuthContext";
 function App() {
   return (
     <BrowserRouter>
@@ -37,13 +39,19 @@ function App() {
           <Route path="/products" element={<Products/>}/>
           <Route path="/products/:id" element={<ProductDetail/>}/>
           
-          <Route path="/dashboard" element={<Dashboard/>}>
-            <Route path="profile" element={<Profile/>}/>
-            <Route path="orders" element={<Orders/>}/>
-            <Route path="setting" element={<Setting/>}/>
-          </Route>
-
           <Route path="/checkout" element ={<Checkout/>}/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        >
+          <Route path="profile" element={<Profile />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="setting" element={<Setting />} />
+        </Route>
+
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </div>
