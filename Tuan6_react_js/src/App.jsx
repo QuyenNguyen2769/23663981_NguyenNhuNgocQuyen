@@ -13,6 +13,8 @@ import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
 import Orders from "./components/Orders";
 import Setting from "./components/Setting";
+
+import Checkout from "./components/Checkout";
 function App() {
   return (
     <BrowserRouter>
@@ -41,7 +43,7 @@ function App() {
             <Route path="setting" element={<Setting/>}/>
           </Route>
 
-          
+          <Route path="/checkout" element ={<Checkout/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </div>
