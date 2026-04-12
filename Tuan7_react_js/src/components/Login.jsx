@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { login } from "../features/auth/authSlice";
+import { showNotification } from "../features/notification/notificationSlice";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -9,7 +10,18 @@ export default function Login() {
       username: "Quyen",
     };
     dispatch(login(fakeUser));
-  };
 
-  return <button onClick={handleLogin}>Login</button>;
+    // HIỂN THỊ TOAST
+    dispatch(
+      showNotification({
+        message: "Đăng nhập thành công!",
+        type: "success",
+      })
+    );
+  };
+return (
+    <div>
+      <button onClick={handleLogin}>Login</button>
+    </div>
+  );
 }

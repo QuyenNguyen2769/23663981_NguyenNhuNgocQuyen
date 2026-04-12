@@ -14,6 +14,8 @@ import TodoList from "./components/TodoList";
 import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
 
+import Notification from "./components/Notification";
+
 
 export default function App() {
   const theme = useSelector((state) => state.theme.mode);
@@ -53,6 +55,10 @@ export default function App() {
       <h2>Shopping Cart</h2>
       <ProductList />
       <Cart />
+
+      <hr />
+      {/* Bài 6 */}
+      <Notification />
     </div>
   );
 }
