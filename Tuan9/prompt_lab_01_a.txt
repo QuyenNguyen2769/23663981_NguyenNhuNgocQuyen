@@ -1,0 +1,46 @@
+Bạn là một chuyên gia lập trình ReactJS, Tailwind CSS và UI/UX Designer. Hãy giúp tôi xây dựng ứng dụng "Chefify", một nền tảng công thức nấu ăn, bằng Vite + React + Tailwind CSS. 
+
+Yêu cầu kỹ thuật chung:
+- Sử dụng thư viện `lucide-react` cho các biểu tượng (icons).
+- Các file hình ảnh tĩnh nằm trong thư mục `/img/` ở ngoài hoặc trong `public`. Riêng ảnh illustration đăng ký tài khoản, hãy import trực tiếp: `import accountImg from '../../img/account.png'`.
+- Tất cả các thẻ <img> phải có thuộc tính `onError` để fallback sang ảnh Unsplash ngẫu nhiên về đồ ăn nếu đường dẫn local bị lỗi.
+
+Vui lòng code file `src/pages/Lab01.jsx` (Trang chủ & Auth Modals) thật chi tiết theo cấu trúc sau:
+
+1. QUẢN LÝ TRẠNG THÁI (STATE):
+- Tạo một state `modalState` (giá trị mặc định: 'discover'). Các giá trị có thể có: 'discover', 'create', 'login', 'signup', hoặc `null` (để tắt toàn bộ modal).
+
+2. TRANG NỀN SCROLL DÀI (BACKGROUND PAGE): 
+Thẻ bao ngoài cùng là `div` với `min-h-screen bg-white font-sans`. Chứa các khối:
+- Header: Logo Chefify, thanh tìm kiếm (có icon Search), Menu điều hướng (What to cook, Recipes...), Nút "Login" (chữ hồng nền hồng nhạt, onClick mở modal 'login'), Nút "Subscribe" (nền hồng đậm, onClick mở modal 'signup'). Header phải có `z-20 relative`.
+- Hero Section: Một ảnh bìa to tràn viền. Nổi lên trên mép trái là một "Thẻ Recipe of the day" (Floating Card) màu trắng, có nhãn "--- Recipe of the day ---" màu vàng, chứa tên món "Salad Caprese", mô tả, avatar tác giả, và nút "View now".
+- Section "This Summer Recipes": Lưới 4 cột thẻ món ăn nhỏ.
+- Section "Recipes With Videos": Lưới 4 cột thẻ video hướng dẫn nấu ăn.
+- Section "Editor's pick": Lưới 2 cột thẻ ngang to bản (gồm ảnh bên trái, chi tiết bên phải).
+- Footer: Nền xám đen (`bg-gray-900`), chia làm 3 cột chính (About Us kèm form gửi email, Learn More / Shop, và Recipes). Dưới đáy có Logo và bản quyền.
+
+3. LỚP PHỦ TỐI & CÁC MODAL ĐĂNG NHẬP (OVERLAY):
+- Nếu `modalState !== null`, hiển thị một lớp phủ màu đen bán trong suốt `fixed inset-0 bg-black/50 z-[100] backdrop-blur-sm`. Bắt sự kiện onClick lên lớp nền này để set `modalState(null)` (tắt modal).
+- Bên trong lớp phủ, hiển thị các Modal dựa theo giá trị `modalState`:
+
+a. Modal "Discover" (Lab 1a):
+- Giao diện dọc (width ~ 600px). Có nút X ở góc trên bên phải.
+- Chứa text "Discover Chefify", mô tả ngắn, hình ảnh một đĩa thức ăn. Có 3 dấu chấm tròn điều hướng.
+- Nút "Next" lớn màu hồng -> onClick set state sang 'create'.
+- Nút "Skip" dạng text link -> onClick set state sang `null` (đóng).
+
+b. Modal "Create Account":
+- Giao diện ngang 2 cột (width ~ 800px).
+- Cột trái: Form nhập Full name, Email, Password. Nút "Sign In" màu hồng. Phía dưới là dòng "Or sign in với" kèm 3 nút mạng xã hội (Google: nền đỏ nhạt chữ đỏ, Facebook: nền xanh nhạt chữ xanh, Apple: nền xám nhạt chữ xám đen). Các nút này thiết kế hình oval (bo tròn góc).
+- Cột phải: Nền màu hồng đậm toàn phần, chứa ảnh minh hoạ `accountImg`.
+
+c. Modal "Login" (Lab 1b):
+- Giao diện ngang 2 cột (width ~ 850px). Nút X nổi ở góc phải.
+- Cột trái (45% chiều rộng): Ảnh món ăn nền tối, bên trên dập chữ trắng "Embrace the art of cooking, where flavors come alive!".
+- Cột phải: Form "Login". Nhập Email, nút "Continue". Nút đăng nhập Google, Facebook, Apple thiết kế dạng thanh ngang dài có viền, chữ xám.
+
+d. Modal "Sign Up":
+- Giao diện 1 cột nhỏ (width ~ 450px).
+- Chia form thành: First name, Last name ngang hàng. Email, Password dọc. Có checkbox đồng ý điều khoản. Nút "Sign up" hồng. Phần OR với 3 nút mạng xã hội hình tròn nhỏ.
+
+Yêu cầu code gọn gàng, chia className bằng TailwindCSS chuẩn xác để cho ra một giao diện hiện đại và bắt mắt.

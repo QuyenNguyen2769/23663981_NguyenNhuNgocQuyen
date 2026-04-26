@@ -1,0 +1,39 @@
+Bạn là một chuyên gia lập trình Frontend với ReactJS và Tailwind CSS. Hãy code giúp tôi hai Component (hoặc Modal) là "Login" và "Sign Up" với thiết kế thật chi tiết, hiện đại và chuẩn xác theo các yêu cầu sau:
+
+Màu chủ đạo (primary): Màu hồng đậm (`bg-pink-500` hoặc mã màu tuỳ chỉnh của Tailwind).
+
+**1. GIAO DIỆN LOGIN MODAL:**
+- Khung Modal: Hình chữ nhật nằm ngang, chiều rộng khoảng `850px`, chiều cao `550px`, bo góc tròn (`rounded-2xl`), đổ bóng lớn (`shadow-2xl`), nền trắng (`bg-white`).
+- Nút tắt (X): Nằm nổi ở góc trên cùng bên phải, nền trắng bo tròn nhỏ, icon màu xám.
+- Cột bên trái (chiếm 45% chiều rộng):
+  - Chứa hình ảnh món ăn tràn kín cột (`object-cover`). 
+  - Có một lớp phủ màu xanh mòng két trong suốt (`bg-teal-900/30`) phủ lên ảnh.
+  - Ở chính giữa là đoạn văn bản màu trắng, in đậm, đổ bóng chữ: *"Embrace the art of cooking, where flavors come alive!"*.
+- Cột bên phải (chiếm 55%, padding rộng rãi):
+  - Tiêu đề: "Login" (màu đen, chữ to, in đậm). Subtitle: "Enter your email to log in." (màu xám nhỏ).
+  - Form: 1 ô input nhập Email (nền xám nhạt `bg-gray-50`, viền mỏng, khi focus có viền màu hồng).
+  - Nút bấm: "Continue" (nền màu hồng, chữ trắng, in đậm, bo góc `rounded-lg`, hover sang hồng đậm hơn).
+  - Dòng kẻ ngang phân cách có chữ "OR" ở giữa (màu xám nhạt).
+  - Đoạn text nhỏ xíu căn giữa: "By continuing, you agree to the updated Terms of Sale, Terms of Service, and Privacy Policy."
+  - 3 nút Đăng nhập mạng xã hội nằm dọc (chiều rộng full):
+    + Nút Google: Nền đỏ rất nhạt (`bg-red-50`), chữ đỏ, icon G đậm.
+    + Nút Facebook: Nền xanh dương rất nhạt (`bg-blue-50`), chữ xanh dương, icon f đậm.
+    + Nút Apple: Nền xám nhạt (`bg-gray-100`), chữ xám đen, icon quả táo () đậm.
+
+**2. GIAO DIỆN SIGN UP MODAL:**
+- Khung Modal: Hình chữ nhật đứng, chiều rộng khoảng `450px`, bo góc tròn (`rounded-2xl`), đổ bóng lớn (`shadow-2xl`), nền trắng (`bg-white`). padding rộng khoảng `p-10`.
+- Tiêu đề: "Sign up" (in đậm, căn giữa, màu xám đen).
+- Các trường nhập liệu (Labels chữ nhỏ màu xám, Input nền xám nhạt `bg-gray-50`, bo góc):
+  - Hàng 1: Hai cột song song (First name và Last name).
+  - Hàng 2: Email (100% width).
+  - Hàng 3: Password (100% width, có placeholder "Enter at least 8+ characters").
+- Một ô Checkbox nhỏ: "By signing up, I agree with the Terms of Use & Privacy Policy" (Các chữ Terms of Use có màu hồng).
+- Nút bấm: "Sign up" (nền hồng, chữ trắng, 100% width, bo góc, `mt-4`).
+- Dòng chữ nhỏ căn giữa: "Already have an account? Log in" (chữ Log in in đậm màu hồng).
+- Dòng kẻ ngang phân cách có chữ "OR" ở giữa.
+- Dưới cùng là 3 nút bấm mạng xã hội hình tròn nhỏ (`w-8 h-8 rounded-full`) xếp ngang hàng ở giữa:
+  + Google: Nền đỏ, chữ trắng.
+  + Facebook: Nền xanh biển đậm, chữ trắng.
+  + Apple: Nền đen, chữ trắng.
+
+Yêu cầu sử dụng các utilities của Tailwind CSS như Flexbox, Spacing, Typography, Colors để bố cục được pixel-perfect và code trông thật sạch sẽ. Thêm hiệu ứng `transition-all` cho tất cả các nút bấm khi hover.
